@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <title>ESP8266 Web Server</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript" src="script.js"></script>
+  </head>
+  <body>
+    <div id="content" class="t-a-c">
+      <h2>Help</h2>
+      <div class="about-content-wrapper">
+        <div class="about-content">
+          <p>
+            1. Home button redirects the user all the time to the main menu.
+          </p>
+        </div>
+        <div class="about-content">
+          <p>
+            2. Sensor Status shows us if the sensors are connected to the board
+            and reads their values.
+          </p>
+        </div>
+        <div class="about-content">
+          <p>
+            3. Window Status displays the state of the window(open/close), the
+            value of the sensors, and contains two buttons, one for toggle the
+            window (open/close) and one for blocking the window in close position.
+            If the window is open and block is triggered, the window will close
+            and nothing cannot overide this command.
+          </p>
+        </div>
+        <div class="about-content">
+          <p>
+            4. Sensor Customize allows the user to set base values for the sensors
+            as its will. The Base values represent the comparison values for
+            the sensors. With them the user can set if the window should be open
+            at a specific temperature, humidity or if it is raining.
+          </p>
+        </div>
+        <div class="about-content">
+          <p>
+            5. Reset allows the user to reset the board. After 10 seconds, the
+            user will receive a confirmation if he want's to reset the board to
+            its initial state. The reset will bring the customize sensor values
+            to their default values.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <button
+        onclick="window.location.href = '/';"
+        id="homeButton"
+        class="home-button"
+      >
+        Home
+      </button>
+    </div>
+  </body>
+</html>

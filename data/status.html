@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title>ESP8266 Web Server</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript" src="script.js"></script>
+  </head>
+  <body
+    onload="readHumidityStatus(); readTemperatureStatus(); readRainStatus(); readPirStatus();"
+    class="reset-container"
+  >
+    <div class="wrapper">
+      <div class="button" id="btnTih">Temp & Humidity</div>
+      <div class="button" id="btnRain">Rain</div>
+      <div class="button active" id="btnPir">PIR</div>
+    </div>
+    <div>
+      <table class="table-align-content">
+        <tr>
+          <th>Temperature</th>
+          <th>Humidity</th>
+          <th>Rain</th>
+          <th>Motion</th>
+        </tr>
+        <tr>
+          <td><p id="wind-temperature"></p></td>
+          <td><p id="wind-humidity"></p></td>
+          <td><p id="wind-rain"></p></td>
+          <td><p id="wind-motion"></p></td>
+        </tr>
+      </table>
+    </div>
+    <div class="footer">
+      <button
+        onclick="window.location.href = '/';"
+        id="homeButton"
+        class="home-button"
+      >
+        Home
+      </button>
+    </div>
+  </body>
+</html>

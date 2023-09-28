@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <title>ESP8266 Web Server</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript" src="script.js"></script>
+  </head>
+  <body>
+    <div id="content" class="t-a-c">
+      <h2>About</h2>
+      <div class="about-content-wrapper">
+        <div class="about-content">
+          <p>
+            This project is a low cost home automation system that controls the
+            air quality inside a room by reducing the indoor relative
+            humidity to a healthy level and control the temperature .
+          </p>
+        </div>
+        <div class="about-content">
+          <p>
+            The software is designed to open and close a window depending on the
+            input from several sensors: temperature, relative humidity, rainfall
+            and motion. It also includes two user inputs, one phisically and one
+            digital. The inputs allow the user to open and close the window at
+            its will. The system also integrates a blocking UI button, which
+            blocks the window and close it.
+          </p>
+        </div>
+        <div class="about-content">
+          <p>
+            The web application, allows the user to customize the control of the
+            air quality within the room by changing the settings within the
+            application.
+          </p>
+        </div>
+        <div class="about-content">
+          <p>
+            First the microcontroller acts like an access point, from where the
+            user can choose his wifi network to connect. After the user enters
+            his credentials, the microcontroller becomes a server which will
+            display to the user the main app.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <button
+        onclick="window.location.href = '/';"
+        id="homeButton"
+        class="home-button"
+      >
+        Home
+      </button>
+    </div>
+  </body>
+</html>

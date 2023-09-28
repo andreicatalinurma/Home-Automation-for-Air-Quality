@@ -1,0 +1,103 @@
+<html>
+  <head>
+    <title>ESP8266 Web Server</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript" src="script.js"></script>
+  </head>
+  <body
+    class="customize-container customize-align-text"
+    onload="getSensorRangeValues(); readHumidityStatus(); readTemperatureStatus(); readRainStatus();"
+  >
+    <div>
+      <table class="table-align-content" class="m-b-20">
+        <tr>
+          <th>Actual Temperature</th>
+          <th>Actual Humidity</th>
+          <th>Actual Rain</th>
+        </tr>
+        <tr>
+          <td><p id="wind-temperature"></p></td>
+          <td><p id="wind-humidity"></p></td>
+          <td><p id="wind-rain"></p></td>
+        </tr>
+      </table>
+      <table class="table-align-content">
+        <tr>
+          <th>Base Temperature</th>
+          <th>Base Humidity</th>
+          <th>Base Rain</th>
+        </tr>
+        <tr>
+          <td>
+            <p id="sensor-status-temperature" class="t-a-c"></p>
+          </td>
+          <td>
+            <p id="sensor-status-humidity" class="t-a-c"></p>
+          </td>
+          <td><p id="sensor-status-rain" class="t-a-c"></p></td>
+        </tr>
+      </table>
+    </div>
+    <form action="/submitCustomValues" class="customize-align-text">
+      <div>
+        <p class="font-weight-bold">Enter next value for Temperature:</p>
+        <input
+          type="number"
+          min="10"
+          max="49"
+          placeholder="The range is between 10 and 49"
+          name="input_temperature"
+        />
+      </div>
+      <div>
+        <p class="font-weight-bold">Enter next value for Humidity:</p>
+        <input
+          type="number"
+          min="1"
+          max="100"
+          placeholder="The range is between 1 and 100"
+          name="input_humidity"
+        />
+      </div>
+      <div>
+        <div class="m-t-10">
+          <table class="customize-table-align-content">
+            <tr>
+              <th>Enter next value for Rain:</th>
+            </tr>
+            <tr>
+              <td><p>(Drizzling Rain: > 600)</p></td>
+            </tr>
+            <tr>
+              <td><p>(Moderate Rain: 400 - 599)</p></td>
+            </tr>
+            <tr>
+              <td><p>(Heavy Rain: < 400)</p></td>
+            </tr>
+          </table>
+        </div>
+        <input
+          type="number"
+          min="200"
+          max="1000"
+          placeholder="The range is between 200 and 1000"
+          name="input_rain"
+        />
+      </div>
+      <br />
+      <div class="button-container-form">
+        <input class="submit-button" type="submit" value="Submit" />
+      </div>
+    </form>
+    <div class="footer">
+      <button
+        class="home-button"
+        onclick="window.location.href = '/';"
+        id="homeButton"
+      >
+        Home
+      </button>
+    </div>
+  </body>
+</html>

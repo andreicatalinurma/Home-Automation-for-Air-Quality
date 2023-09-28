@@ -1,0 +1,90 @@
+<html>
+  <head>
+    <title>ESP8266 Web Server</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript" src="script.js"></script>
+  </head>
+  <body
+    onload="readHumidityStatus(); readTemperatureStatus(); readRainStatus(); readPirStatus(); readWindowStatus(); getBlockWindowStatus();"
+    class="reset-container"
+  >
+    <div class="window-wrapper">
+      <div>
+        <table class="table-align-content">
+          <tr>
+            <th>Temperature</th>
+            <th>Humidity</th>
+            <th>Rain</th>
+            <th>Motion</th>
+          </tr>
+          <tr>
+            <td><p id="wind-temperature"></p></td>
+            <td><p id="wind-humidity"></p></td>
+            <td><p id="wind-rain"></p></td>
+            <td><p id="wind-motion"></p></td>
+          </tr>
+        </table>
+      </div>
+      <div>
+        <p>Window currently state is:</p>
+      </div>
+      <div
+        id="imageContainer"
+        style="display: none"
+        class="image-wrapper-align-content"
+      >
+        <img
+          id="window-o"
+          class="centered-image"
+          alt="o-w"
+          src="o-w"
+          width="200"
+          height="200"
+        />
+        <img
+          id="window-c"
+          class="centered-image"
+          alt="c-w"
+          src="c-w"
+          width="200"
+          height="200"
+        />
+      </div>
+      <div class="form-wrapper">
+        <div class="w-100">
+          <form class="window-input-width toggle-button" action="/toggleWindow">
+            <div>
+              <input
+                class="submit-button h-50"
+                type="submit"
+                value="Toggle Window"
+              />
+            </div>
+          </form>
+        </div>
+        <div class="w-100">
+          <form class="window-input-width block-button" action="/blockWindow">
+            <div>
+              <input
+                id="blockWindowInput"
+                class="submit-button block h-50"
+                type="submit"
+                value="Block"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <button
+        onclick="window.location.href = '/';"
+        id="homeButton"
+        class="home-button"
+      >
+        Home
+      </button>
+    </div>
+  </body>
+</html>
